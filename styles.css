@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar a:hover::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #ff004f;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #ff004f;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+#home,
+#about,
+#skills,
+#certificates,
+#contact {
+    min-height: 100vh; /* Full viewport height */
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home {
+    background: url('home-background.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+.sub-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* About section styles */
+#about {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.row {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.profile-img {
+    width: 100%; /* Adjust width as needed */
+    max-width: 300px; /* Maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.about-col-2 {
+    flex-basis: 65%;
+}
+
+.personal-details {
+    margin-top: 20px;
+}
+
+.personal-details-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.personal-details-label {
+    font-weight: bold;
+    color: #ff004f;
+    width: 150px; /* Label width */
+}
+
+.personal-details-value {
+    flex: 1;
+}
+
+.hire-me-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #ff004f;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hire-me-btn:hover {
+    background-color: #d3004f;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Stack image and text on small screens */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    .about-col-1 {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .personal-details-label {
+        width: auto; /* Adjust width on smaller screens */
+    }
+}
+
+/* Skills Section Styles */
+#skills {
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    padding: 100px 10%;
+    min-height: 100vh; /* Ensure it covers full screen */
+}
+
+.skills-list {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    background: #1e1e1e;
+    padding: 20px;
+    margin: 20px 0; /* Space between items */
+    border-radius: 10px;
+    font-size: 24px; /* Increase font size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.skills-list li:before {
+    content: '■'; /* Custom bullet point */
+    color: #ff004f;
+    font-size: 30px; /* Size of bullet point */
+    margin-right: 15px;
+}
+
+.skills-bar {
+    flex: 1;
+    height: 8px; /* Height of the bar */
+    background-color: #333; /* Dark background for the bar */
+    border-radius: 5px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.skills-bar span {
+    display: block;
+    height: 100%;
+    background-color: #ff004f; /* Bar color */
+    border-radius: 5px;
+    width: 0; /* Width to be animated */
+    transition: width 1s ease-in-out;
+}
+
+.skills-list li .skill-percentage {
+    font-size: 18px; /* Percentage text size */
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Example percentage bars (Customize as needed) */
+#skill-python .skills-bar span {
+    width: 90%; /* Example percentage */
+}
+
+#skill-html .skills-bar span {
+    width: 85%; /* Example percentage */
+}
+
+#skill-css .skills-bar span {
+    width: 80%; /* Example percentage */
+}
+
+#skill-c .skills-bar span {
+    width: 75%; /* Example percentage */
+}
+
+#skill-ai .skills-bar span {
+    width: 70%; /* Example percentage */
+}
+
+@media (max-width: 768px) {
+    .skills-list li {
+        font-size: 20px; /* Adjust font size on smaller screens */
+    }
+
+    .skills-list li:before {
+        font-size: 24px; /* Adjust bullet point size on smaller screens */
+    }
+
+    .skills-bar {
+        height: 6px; /* Adjust bar height on smaller screens */
+    }
+
+    .skills-bar span {
+        height: 100%;
+        border-radius: 4px;
+    }
+}
+
+/* Certificates Section Styles */
+#certificates {
+    background-color: #121212; /* Match background color with other sections */
+    color: #fff; /* Text color to contrast with the background */
+    padding: 100px 10%;
+    min-height: 100vh; /* Ensure it covers full screen */
+}
+
+.sub-title {
+    font-size: 36px;
+    color: #fff; /* Heading color to match the section */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container for scrollable certificates */
+.certificate-container {
+    overflow-x: auto; /* Horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping */
+    padding-bottom: 20px; /* Space at the bottom */
+}
+
+.certificate-grid {
+    display: inline-flex; /* Inline flex to keep items in a row */
+    gap: 20px; /* Space between items */
+}
+
+.certificate-item {
+    display: inline-block; /* Ensure items appear in a single line */
+    width: 200px; /* Width of each certificate item */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.certificate-item img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.certificate-item:hover {
+    transform: scale(1.05);
+}
+
+.certificate-item a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.certificate-item a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .certificate-item {
+        width: 150px; /* Adjust width for smaller screens */
+    }
+}
+
+
+.contact-left p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ababab;
+    display: flex;
+    align-items: center;
+}
+
+/* Contact Section Styles */
+#contact {
+    background-color: #1e1e1e; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 100px 10%;
+    min-height: 100vh; /* Ensure it covers full screen */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between; /* Space out left and right sections */
+    gap: 20px;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+}
+
+.contact-left {
+    max-width: 50%; /* Restrict the width of the contact info */
+}
+
+.contact-left p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ababab;
+    display: flex;
+    align-items: center;
+}
+
+.contact-left p i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #ababab;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff004f;
+}
+
+.contact-right {
+    max-width: 50%; /* Restrict the width of the form section */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements */
+}
+
+.contact-right form {
+    background: #333; /* Dark background for the form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #444; /* Slightly lighter dark background */
+    color: #fff;
+    font-size: 16px;
+}
+
+.contact-right textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-right button {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #ff004f;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-right button:hover {
+    background: #e0003d;
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+#resume {
+    margin-top: 20px;
+}
+
+#resume .btn2 {
+    margin-top: 0; /* Adjust margin for consistency */
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background: #080808;
+}
+
+.copyright p {
+    color: #ababab;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    background: #080808;
+}
+
+.copyright p {
+    color: #ababab;
+}
+
+.btn2 {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff004f;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn2:hover {
+    background: #e0003d;
+}
